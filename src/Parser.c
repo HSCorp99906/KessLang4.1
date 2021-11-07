@@ -128,14 +128,14 @@ int parser_start(TokenList* list, const char* source) {
             ++lexi;
             ++i;
 
-            if (strcmp(lex, "out") == 0) {
-                instruction_found = 1;
-                token_list_add(list, token_create(T_IDENTIFIER, T_OUT, line));
-            }
-
         }
 
         lex[lexi] = '\0';
+
+        if (strcmp(lex, "out") == 0) {
+            instruction_found = 1;
+            token_list_add(list, token_create(T_IDENTIFIER, T_OUT, line));
+        }
 
         if (source[i] == '\n') {
             ++line;
