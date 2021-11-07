@@ -24,7 +24,7 @@ void token_list_create(TokenList* list, int size) {
 void token_list_add(TokenList* list, Token* tok) {
     if (list -> ptr >= list -> size) {
         list -> size *= 2;
-        list -> data = (Token**)realloc(list -> data, sizeof(Token**) * list -> size);
+        list -> data = (Token**)realloc(list -> data, sizeof(Token*) * list -> size);
     }
 
     list -> data[list -> ptr++] = tok;
