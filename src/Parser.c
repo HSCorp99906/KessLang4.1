@@ -143,9 +143,7 @@ int parser_start(TokenList* list, const char* source) {
             break;
         }
 
-        printf("%c\n", source[i]);
-
-        if (!(instruction_found)) {
+        if (!(instruction_found) && strcmp(lex, "") != 0) {
             status = PARSER_SYNTAX_ERROR;
             printf("ERROR: No identifier named \"%s\".", lex);
             break;
